@@ -40,15 +40,23 @@ CineScope currently supports:
 - `TMDB_API_KEY`
 - `YOUTUBE_API_KEY`
 
-Set them in your shell before launching:
+Store them in a local `.env` file so they stay out of Git.
 
-```bash
-export OMDB_API_KEY='your_omdb_key'
-export TMDB_API_KEY='your_tmdb_key'
-export YOUTUBE_API_KEY='your_youtube_key'
+1. Create a `.env` file in the same folder as `CineScope.py`.
+2. Copy the contents of `.env.example`.
+3. Replace the placeholder values with your real keys.
+
+Example `.env`:
+
+```env
+OMDB_API_KEY=your_omdb_key
+TMDB_API_KEY=your_tmdb_key
+YOUTUBE_API_KEY=your_youtube_key
 ```
 
-Then run:
+The `.env` file is ignored by Git, while `.env.example` is safe to commit.
+
+Then run the app:
 
 ```bash
 /usr/local/bin/python3 /Users/michaelbenavides/Desktop/Cinescope/CineScope.py
@@ -97,7 +105,7 @@ Your existing database is migrated automatically when the app starts.
 ### Posters are not showing
 
 Check these first:
-- `TMDB_API_KEY` is set in the shell where you launch the app
+- `TMDB_API_KEY` is set in `/Users/michaelbenavides/Desktop/Cinescope/.env`
 - Pillow is installed in the same Python environment as the app
 - your internet connection is working
 
@@ -129,4 +137,3 @@ That usually means:
 - add a "watched with" tag
 - add import/export to JSON or CSV
 - add a poster grid view
->>>>>>> 90cb7e1 (Initial commit.)
